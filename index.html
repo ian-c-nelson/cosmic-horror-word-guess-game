@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Nosifer|Ravi+Prakash|Trade+Winds|UnifrakturCook:700"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Page Header -->
+    <header class="bg-black red">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <nav class="navbar">
+                        <span class="navbar-brand mb-0 h1">Guess the Old One</span>
+                    </nav>
+                </div>
+                <div class="col-12 col-md-6 text-center font-unifraktur">
+                    <h3>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn</h3>
+                    <h5 class="font-fredericka">In his house at R'lyeh, dead Cthulhu waits dreaming.</h5>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Page Header -->
+
+    <!-- Page Content -->
+    <div class="content">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <div id="message-card" class="card bg-rosy-brown mt-3">
+                        <div class="card-header bg-gray-green">
+                            <span id="message">Press any key to face the Old One!</span>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                If you can discover the name of the approaching old one before he arrives, he will be
+                                prevented from entering our world. If you fail, humanity will face an eternity of
+                                terror and insanity under his rule! You guess the letters of his name by entering
+                                letters on the keyboard. If they are in the Old One's name they will be revealed. If
+                                they are not in it's name they will be displayed in the previous guesses section.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-3 col-xl-2 d-none d-md-block">
+                    <div class="card bg-dark mt-3">
+                        <img class="card-img" src="assets/images/calling-cthulhu.jpg" alt="Card image">
+                        <div class="card-img-overlay">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="play-area-card" class="card bg-rosy-brown mt-3">
+                        <div class="card-header bg-gray-green">
+                            <span id="message">The Old One Approaches!</span>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="font-nosifer">
+                                <span id="hidden-name">
+                                    C**U**U
+                                </span>
+                            </h1>
+                            <hr>
+                            <h5>
+                                <span id="guesses">
+                                    A E X M N
+                                </span>
+                                </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-3 col-xl-2 d-none d-md-block">
+                        <div class="card bg-dark mt-3">
+                        <img class="card-img" src="assets/images/calling-cthulhu.jpg" alt="Card image">
+                        <div class="card-img-overlay">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div id="results-card" class="card bg-rosy-brown mt-3">
+                        <div class="card-header bg-gray-green">
+                            <span id="message">Score</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-md">
+                                    <p>Doom Counter: <span id="guesses-left"></span></p>
+                                </div>
+                                <div class="col-12 col-md">
+                                    <p>Wins: <span id="wins"></span></p>
+                                </div>
+                                <div class="col-12 col-md">
+                                    <p>Losses: <span id="losses"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Content -->
+
+    <!-- Page Footer-->
+    <footer class="footer fixed-bottom bg-black red">
+        <div class="container text-center text-md-left">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">
+                <span>Copyright, Ian Nelson, 2018 ©</span>
+            </div>
+            <!-- Copyright -->
+        </div>
+    </footer>
+    <!-- Page Footer-->
+    <script src="assets/javascript/game.js"></script>
+</body>
+
+</html>

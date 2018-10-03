@@ -1,0 +1,156 @@
+/* base styles */
+* {
+    box-sizing: border-box;
+}
+
+/* colors */
+/* Vampire Black/ Vivaldi Red */
+.bg-black {
+    background-color: #080808 
+}
+
+.bg-parchment {
+    background-color: #ebd5b3;
+}
+
+.bg-gray-green {
+    background-color:#7d8a70;
+}
+
+.bg-rosy-brown {
+    background-color: #9d9885;
+}
+
+.red {
+    color: #ef3939;
+}
+
+/* fonts */
+.font-fredericka {
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.font-nosifer {
+    font-family: 'Nosifer', cursive;
+}
+
+.font-ravi {
+    font-family: 'Ravi Prakash', cursive;
+}
+
+.font-trade-winds {
+    font-family: 'Trade Winds', cursive;
+}
+
+.font-unifraktur {
+    font-family: 'UnifrakturCook', cursive;
+}
+
+.hidden {
+    display: none;
+}
+
+/* content styles */
+
+body {
+    color: #080808;
+    background-color: #9da389;
+    font-family: 'Trade Winds', cursive;
+    background-image: url("../images/cthulhu_3x_by_obrotowy-dbmonhc.jpg");
+    background-repeat: no-repeat; 
+    background-size: 900px;
+    background-position: -200px 120px;
+
+    background-color: yellow;
+}
+
+header {
+    border-bottom: solid #9d9885 5px;
+}
+
+header .navbar-brand {
+    font-size: 2rem;
+}
+
+header h3 {
+    font-size: 1rem;
+    padding: 0;
+    margin: .25rem auto;
+}
+
+header h5 {
+    font-size: .8rem;
+    padding: 0;
+    margin: .3rem auto;
+}
+
+.content {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.content .card,
+.content .card .card-header {
+    border-color: #080808;
+}
+
+.content .card-body h5 {
+    margin-bottom: 0;
+}
+
+
+.player-guesses {
+    font-size: 2.5rem;
+}
+
+footer {
+    border-top: #9d9885 solid 5px;
+    height: 3rem;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    body {
+        background-size: 1024px;
+        background-position: -100px 70px;
+    
+        background-color: blueviolet;  
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    body {
+        background-size: 1024px;
+        background-position: -100px 70px;
+    }
+    
+    header h3 {
+        font-size: 1.6rem;
+        padding: 0;
+        margin: .25rem 0 0 0;
+    }
+
+    header h5 {
+        font-size: 1.2rem;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    body {
+        background-size: 1400px;
+        background-position: -150px 70px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    body {
+        background-size: cover;
+        background-position:0 70px;
+    }
+}
