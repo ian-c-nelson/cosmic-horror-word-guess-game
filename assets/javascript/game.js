@@ -152,6 +152,9 @@
         elements: {
             doomCounter: document.getElementById("doom-counter"),
             gameCard: document.getElementById("play-area-card"),
+            greatOldOneName: document.getElementById("great-old-one-name"),
+            greatOldOneTitle: document.getElementById("great-old-one-title"),
+            greatOldOneText: document.getElementById("great-old-one-text"),
             guesses: document.getElementById("guesses"),
             infoCard: document.getElementById("info-card"),
             lossesCounter: document.getElementById("losses-counter"),
@@ -182,7 +185,9 @@
         },
 
         updateInfoCard: function(greatOldOne) {
-
+            this.elements.greatOldOneName.textContent = greatOldOne.name;
+            this.elements.greatOldOneNamtitle.textContent = greatOldOne.title;
+            this.elements.greatOldOneText.textContent = greatOldOne.text;
         },
 
         updateGuesses: function (value) {
