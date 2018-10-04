@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-12 col-md-6">
                     <nav class="navbar">
-                        <span class="navbar-brand mb-0 h1">Guess the Old One</span>
+                        <span class="navbar-brand mb-0 h1">Cosmic Horror Show</span>
                     </nav>
                 </div>
                 <div class="col-12 col-md-6 text-center font-unifraktur">
@@ -35,26 +35,7 @@
     <!-- Page Content -->
     <div class="content">
         <div class="container text-center">
-            <div class="row">
-                <div class="col">
-                    <div id="message-card" class="card bg-rosy-brown mt-3">
-                        <div class="card-header bg-gray-green">
-                            <span id="message">Press any key to face the Old One!</span>
-                        </div>
-                        <div class="card-body">
-                            <p>
-                                If you can discover the name of the approaching old one before he arrives, he will be
-                                prevented from entering our world. If you fail, humanity will face an eternity of
-                                terror and insanity under his rule! You guess the letters of his name by entering
-                                letters on the keyboard. If they are in the Old One's name they will be revealed. If
-                                they are not in it's name they will be displayed in the previous guesses section.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="row">
+            <div class="row game-area hidden">
                 <div class="col col-md-3 col-xl-2 d-none d-md-block">
                     <div class="card bg-dark mt-3">
                         <img class="card-img" src="assets/images/calling-cthulhu.jpg" alt="Card image">
@@ -65,32 +46,46 @@
                 <div class="col">
                     <div id="play-area-card" class="card bg-rosy-brown mt-3">
                         <div class="card-header bg-gray-green">
-                            <span id="message">The Old One Approaches!</span>
+                            <span>The Old One Approaches!</span>
                         </div>
                         <div class="card-body">
                             <h1 class="font-nosifer">
-                                <span id="hidden-name">
-                                    C**U**U
+                                <span id="masked-name">
                                 </span>
                             </h1>
                             <hr>
                             <h5>
                                 <span id="guesses">
-                                    A E X M N
                                 </span>
-                                </h3>
+                            </h5>
+                        </div>
+                    </div>
+                    <div id="info-card" class="card bg-rosy-brown mt-3 hidden">
+                        <div class="card-header bg-gray-green">
+                            <h1 id="great-old-one-name"></h1>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="font-nosifer">
+                                <span id="great-old-one-title">
+                                </span>
+                            </h3>
+                            <hr>
+                            <p>
+                                <span id="great-old-one-text">
+                                </span>
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col col-md-3 col-xl-2 d-none d-md-block">
-                        <div class="card bg-dark mt-3">
+                    <div class="card bg-dark mt-3">
                         <img class="card-img" src="assets/images/calling-cthulhu.jpg" alt="Card image">
                         <div class="card-img-overlay">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row game-area hidden">
                 <div class="col">
                     <div id="results-card" class="card bg-rosy-brown mt-3">
                         <div class="card-header bg-gray-green">
@@ -99,15 +94,29 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12 col-md">
-                                    <p>Doom Counter: <span id="guesses-left"></span></p>
+                                    <p>Doom Counter: <span id="doom-counter"></span></p>
                                 </div>
                                 <div class="col-12 col-md">
-                                    <p>Wins: <span id="wins"></span></p>
+                                    <p>Wins: <span id="wins-counter"></span></p>
                                 </div>
                                 <div class="col-12 col-md">
-                                    <p>Losses: <span id="losses"></span></p>
+                                    <p>Losses: <span id="losses-counter"></span></p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div id="message-card" class="card bg-rosy-brown mt-3">
+                        <div class="card-header bg-gray-green">
+                            <span id="message-header">
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <p id="message-text">
+                            </p>
                         </div>
                     </div>
                 </div>
