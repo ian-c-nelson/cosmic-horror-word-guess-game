@@ -30,28 +30,28 @@
                 gameData.alphabetArray = gameController.genAlphabet();
             }
 
-            // Check for valid keystrokes using the alpha array.
-            if (gameData.alphabetArray.indexOf(key) == -1) {
-                uiController.updateMessage("Invalid Guess", "Please guess a letter. Quickly, before doom comes to us all!!!");
-                return;
-            }
-
             // We got a valid key, update the game state
             gameController.updateGameState(key);
         },
 
-        updateGameState: function (guess) {
+        updateGameState: function (key) {
             // If the doom counter is <= 0 start the round.
             if (gameData.doomCounter <= 0) {
-                gameData.doomCounter = 15;
+                gameData.doomCounter = 20;
                 gameData.selectedOldOne = this.getGreatOldOne();
                 uiController.toggleInfoCards(false);
                 uiController.showGameArea(true);
             } else {
-                if (gameData.guesses.indexOf(guess) === -1) {
-                    gameData.guesses.push(guess);
+                // Check for valid keystrokes using the alpha array.
+                if (gameData.alphabetArray.indexOf(key) == -1) {
+                    uiController.updateMessage("Invalid Guess", "Please guess a letter. Quickly, before doom comes to us all!!!");
+                    return;
+                }
 
-                    if (gameData.selectedOldOne.name.toUpperCase().indexOf(guess) !== -1) {
+                if (gameData.guesses.indexOf(key) === -1) {
+                    gameData.guesses.push(key);
+
+                    if (gameData.selectedOldOne.name.toUpperCase().indexOf(key) !== -1) {
                         uiController.updateMessage("The Darkness Lessens", "You breathe a sigh of relief as another piece of the mystery is revealed. There is yet hope!");
                     } else {
                         uiController.updateMessage("The Shadows Swirl", "The mystery remains impenetrable, and the remaining time we have becomes ever more finite...");
@@ -59,9 +59,10 @@
                 } else {
                     uiController.updateMessage("You Lost in the Mist", "Please guess a new letter! We are running out of time!");
                 }
+
+                gameData.doomCounter--;
             }
 
-            gameData.doomCounter--;
             gameData.maskedName = this.genMaskedName();
             uiController.updateMaskedName(gameData.maskedName);
             uiController.updateGuesses(gameData.guesses.join(", "));
@@ -92,6 +93,7 @@
             }
 
             // show the Old One's info card
+            uiController.updateInfoCard(gameData.selectedOldOne);
             uiController.toggleInfoCards(true);
 
             // Complete the game.
@@ -174,8 +176,8 @@
             });
         },
 
-        toggleInfoCards: function(showinfoCard) {
-            if(showinfoCard) {
+        toggleInfoCards: function (showinfoCard) {
+            if (showinfoCard) {
                 this.elements.gameCard.classList.add("hidden");
                 this.elements.infoCard.classList.remove("hidden");
             } else {
@@ -184,9 +186,9 @@
             }
         },
 
-        updateInfoCard: function(greatOldOne) {
+        updateInfoCard: function (greatOldOne) {
             this.elements.greatOldOneName.textContent = greatOldOne.name;
-            this.elements.greatOldOneNamtitle.textContent = greatOldOne.title;
+            this.elements.greatOldOneTitle.textContent = greatOldOne.title;
             this.elements.greatOldOneText.textContent = greatOldOne.text;
         },
 
