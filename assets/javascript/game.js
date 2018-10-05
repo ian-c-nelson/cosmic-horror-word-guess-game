@@ -3,6 +3,7 @@
 
     var gameController = {
         init: function (fullInit) {
+
             //Initialize the game state
             gameData.guesses = [];
             gameData.doomCounter = 0;
@@ -16,6 +17,12 @@
                 gameData.lastOldOneIndex = -1;
                 uiController.updateMessage(gameData.initialMessage, gameData.instructions);
                 uiController.showGameArea(false);
+
+                $(document).on("keyup", this.onKeyUp);
+                $("#sound-toggle").on("click", this.soundToggleClick);
+
+                //set the initial background volume and start the music.
+                uiController.elements.backgroundAudio.volume = .3;
             }
 
             uiController.updateWinsCounter(gameData.wins);
@@ -32,6 +39,17 @@
 
             // We got a valid key, update the game state
             gameController.updateGameState(key);
+        },
+
+        soundToggleClick: function () {
+            var $button = $(this).find("i");
+            $button.toggleClass("fa-volume-up fa-volume-off");
+            gameData.soundEnabled = !gameData.soundEnabled;
+            if (gameData.soundEnabled) {
+                uiController.elements.backgroundAudio.play();
+            } else {
+                uiController.elements.backgroundAudio.pause();
+            }
         },
 
         updateGameState: function (key) {
@@ -90,6 +108,11 @@
             } else {
                 gameData.losses++;
                 uiController.updateMessage("Failure!", "The Great Old One has entered our world and begun laying waste to the land scape...  Press any key to challenge another Great Old One.")
+            }
+
+            // roar!
+            if(gameData.soundEnabled) {
+                uiController.elements.roarAudio.play();
             }
 
             // show the Old One's info card
@@ -152,6 +175,7 @@
 
     var uiController = {
         elements: {
+            backgroundAudio: document.getElementById("background-audio"),
             doomCounter: document.getElementById("doom-counter"),
             gameCard: document.getElementById("play-area-card"),
             greatOldOneName: document.getElementById("great-old-one-name"),
@@ -163,6 +187,8 @@
             maskedName: document.getElementById("masked-name"),
             messageHeader: document.getElementById("message-header"),
             messageText: document.getElementById("message-text"),
+            roarAudio: document.getElementById("roar-audio"),
+            soundToggle: document.getElementById("sound-toggle"),
             winsCounter: document.getElementById("wins-counter")
         },
 
@@ -228,6 +254,7 @@
         maskedName: "",
         selectedOldOne: null,
         lastOldOneIndex: -1,
+        soundEnabled: true,
         initialMessage: "Press any key to face the Great Old One!",
         instructions: "If you can discover the name of the approaching old one before he arrives, he will be prevented from entering our world. If you fail, humanity will face an eternity of terror and insanity under his rule! You guess the letters of his name by entering letters on the keyboard. If they are in the Great Old One's name they will be revealed. If they are not in it's name they will be displayed in the previous guesses section below the name. Each guess will cause the Doom Counter to tick down. When it reaches zero the Great Old One has arrived bring doom upon us all! Good luck!",
 
@@ -330,7 +357,5 @@
 
     };
 
-
     gameController.init(true);
-    document.addEventListener("keyup", gameController.onKeyUp);
 })();

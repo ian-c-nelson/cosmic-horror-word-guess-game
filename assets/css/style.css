@@ -25,6 +25,10 @@
     color: #ef3939;
 }
 
+.border-red {
+    border: #ef3939 solid 1px;
+}
+
 /* fonts */
 .font-fredericka {
     font-family: 'Fredericka the Great', cursive;
@@ -106,6 +110,12 @@ header h5 {
 footer {
     border-top: #9d9885 solid 5px;
     height: 3rem;
+}
+
+footer .sound .btn {
+    width: 1.5rem;
+    padding: .2rem;
+    line-height: 18px;
 }
 
 
