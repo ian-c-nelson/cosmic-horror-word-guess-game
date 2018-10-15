@@ -64,8 +64,6 @@ body {
     background-repeat: no-repeat; 
     background-size: 900px;
     background-position: -200px 120px;
-
-    background-color: yellow;
 }
 
 header {
@@ -124,8 +122,6 @@ footer .sound .btn {
     body {
         background-size: 1024px;
         background-position: -100px 70px;
-    
-        background-color: blueviolet;  
     }
 }
 

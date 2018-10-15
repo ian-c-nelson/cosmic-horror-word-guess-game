@@ -128,11 +128,22 @@
         },
 
         logState: function (key) {
+            // log a separator
             console.log("------------------------------------------------");
+
+            //log the key the user pressed
             console.log(key);
+
+            // Log the guesses array
             console.log(gameData.guesses);
-            console.log(gameData.maskedName);
+
+            // log the selected word
             console.log(gameData.selectedOldOne.name)
+
+            // log the name with hidden letters
+            console.log(gameData.maskedName);
+
+            // log the remaining guesses
             console.log(gameData.doomCounter);
         },
 
